@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: vendas
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sales
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
