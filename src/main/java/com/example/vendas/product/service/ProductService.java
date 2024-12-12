@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(readOnly = true)
 public class ProductService {
@@ -47,5 +49,9 @@ public class ProductService {
 
         Product updatedProduct = productRepository.saveAndFlush(foundProduct);
         return productDtoMapper.domainToDto(updatedProduct);
+    }
+
+    public void reduceProductStockByIds(List<Long> productIds) {
+        this.productRepository.reduceProductStockByIds(productIds);
     }
 }

@@ -7,6 +7,4 @@ public interface DtoMapper<T, D> {
     T domainToDto(D domain);
 
     List<T> domainToDto(List<D> domains);
-
-    D dtoToDomain(T dto);
 }

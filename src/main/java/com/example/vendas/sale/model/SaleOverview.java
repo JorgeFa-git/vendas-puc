@@ -12,13 +12,13 @@ import java.time.OffsetDateTime;
 @Subselect(value = """
 SELECT
 	s.id,
-	c.id AS cleint_id,
+	c.id AS client_id,
 	c."name" AS client_name,
-	s.total,
+	s.total AS total_value,
 	s.created_at,
 	(SELECT count(*) FROM sale_products sp WHERE sp.sale_id = s.id) AS total_products
 FROM sale s
-JOIN client c ON c.id = s.client_id;
+JOIN client c ON c.id = s.client_id
 """)
 @Data
 @Entity

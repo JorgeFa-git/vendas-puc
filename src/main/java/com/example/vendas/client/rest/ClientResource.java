@@ -1,6 +1,7 @@
 package com.example.vendas.client.rest;
 
 import com.example.vendas.client.model.Client;
+import com.example.vendas.client.model.ClientDto;
 import com.example.vendas.client.model.ClientOverview;
 import com.example.vendas.client.service.ClientService;
 import org.springframework.data.domain.Page;
@@ -27,7 +28,7 @@ public class ClientResource {
     }
 
     @GetMapping("/clients/{id}")
-    public ResponseEntity<Client> getClientById(@PathVariable Long id) {
+    public ResponseEntity<ClientDto> getClientById(@PathVariable Long id) {
         return ResponseEntity.ok(clientService.getById(id));
     }
 

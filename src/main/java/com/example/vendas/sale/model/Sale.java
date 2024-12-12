@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
@@ -30,7 +31,7 @@ public class Sale {
             joinColumns = @JoinColumn(name = "sale_id", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "product_id", nullable = false)
     )
-    private Set<Product> products;
+    private List<Product> products;
 
     @Column(nullable = false)
     private BigDecimal total;
